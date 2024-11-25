@@ -1,6 +1,14 @@
 # -------------------- Security Group ----------------------------
 resource "aws_security_group" "base-sg" {
     vpc_id =  var.vpc_id # aws_vpc.base-vpc.id
+
+    # ingress {
+    #   from_port   = 0
+    #   to_port     = 0
+    #   protocol    = "icmp"
+    #   cidr_blocks = ["0.0.0.0/0"]  # Permite ping de qualquer lugar
+    # }
+
     egress {
         from_port = 0
         to_port = 0
